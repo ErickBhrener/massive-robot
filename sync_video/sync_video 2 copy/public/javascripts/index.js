@@ -22,7 +22,9 @@ var main = function () {
 
         $("#player").attr('class', 'inactive');
         $("#leaveBtn").attr('class', 'inactive');
+        // $("#create-form").attr('class', 'active');
         $("#create").attr('class', 'active');
+        $("#main-panel").attr('class', 'inative');
         $('#username').empty();
         $('#leader').empty();
         $('#room').empty();
@@ -149,10 +151,10 @@ var main = function () {
         $("#username").text("Hello " + username);
         $("#leader").text("Leader: " + leader);
         $("#room").text("Room: " + currentSync.room);
-
+        $("#room-info").text("Room Info");
         
         $("#create").attr("class", "inactive");
-
+        $("#main-panel").attr('class', 'active');
         $("#player").attr("class", "active");
         $("#leaveBtn").attr("class", "active");
         $("#ytplayer").attr("class", "active");
@@ -219,7 +221,7 @@ var main = function () {
 
         
         $("#create").attr("class", "inactive");
-
+        $("#main-panel").attr("class", "active");
         $("#player").attr("class", "active");
         $("#leaveBtn").attr("class", "active");
         $('#name').val('');
@@ -247,6 +249,7 @@ var main = function () {
             $("#player").attr('class', 'inactive');
             $("#ytplayer").attr('class', 'inactive');
             $("#leaveBtn").attr('class', 'inactive');
+            $("#main-panel").attr('class', 'inactive');
             $("#create").attr('class', 'active');
             $('#username').empty();
             $('#leader').empty();
@@ -264,6 +267,7 @@ var main = function () {
             if(currentSync.users[i] === username ) {
              $("#player").attr('class', 'inactive');
              $("#leaveBtn").attr('class', 'inactive');
+             $("#main-panel").attr('class', 'inactive');
              $("#create").attr('class', 'active');
              $('#username').empty();
              $('#leader').empty();
@@ -335,8 +339,10 @@ function onYouTubeIframeAPIReady() {
     height: '390',
     width: '640',
     playerVars: {
-        controls: 1,
-        disablekb: 1
+        controls: 0,
+        disablekb: 1,
+        autohide:1,
+        showinfo:0
     },
     //videoId: 'M7lc1UVf-VE',
         events: {
