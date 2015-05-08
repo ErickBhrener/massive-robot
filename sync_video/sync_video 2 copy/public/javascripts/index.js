@@ -22,9 +22,10 @@ var main = function () {
 
         $("#player").attr('class', 'inactive');
         $("#leaveBtn").attr('class', 'inactive');
-        // $("#create-form").attr('class', 'active');
         $("#create").attr('class', 'active');
-        $("#main-panel").attr('class', 'inative');
+        //eric - main panel from the iframe and room information
+        $("#main-panel").attr('class', 'inactive');
+        
         $('#username').empty();
         $('#leader').empty();
         $('#room').empty();
@@ -151,9 +152,11 @@ var main = function () {
         $("#username").text("Hello " + username);
         $("#leader").text("Leader: " + leader);
         $("#room").text("Room: " + currentSync.room);
-        $("#room-info").text("Room Info");
+        //eric - panel heading. the legend: Room Info
+        // $("#room-info").text("Room Info");
         
         $("#create").attr("class", "inactive");
+        //erick - main-panel again
         $("#main-panel").attr('class', 'active');
         $("#player").attr("class", "active");
         $("#leaveBtn").attr("class", "active");
@@ -221,6 +224,7 @@ var main = function () {
 
         
         $("#create").attr("class", "inactive");
+        //eric
         $("#main-panel").attr("class", "active");
         $("#player").attr("class", "active");
         $("#leaveBtn").attr("class", "active");
@@ -249,6 +253,7 @@ var main = function () {
             $("#player").attr('class', 'inactive');
             $("#ytplayer").attr('class', 'inactive');
             $("#leaveBtn").attr('class', 'inactive');
+            //eric
             $("#main-panel").attr('class', 'inactive');
             $("#create").attr('class', 'active');
             $('#username').empty();
@@ -267,6 +272,7 @@ var main = function () {
             if(currentSync.users[i] === username ) {
              $("#player").attr('class', 'inactive');
              $("#leaveBtn").attr('class', 'inactive');
+             //eric
              $("#main-panel").attr('class', 'inactive');
              $("#create").attr('class', 'active');
              $('#username').empty();
@@ -344,6 +350,7 @@ function onYouTubeIframeAPIReady() {
         autohide:1,
         showinfo:0
     },
+    //erick - I changed the controls to 0. To be as before, just delete autohide and showinfo, and put controls to 1!
     //videoId: 'M7lc1UVf-VE',
         events: {
         //'onReady': onPlayerReady,
